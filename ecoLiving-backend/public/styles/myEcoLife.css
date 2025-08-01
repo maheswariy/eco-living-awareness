@@ -98,7 +98,7 @@
 
         input[type="text"],
         textarea,
-        select {
+        select, .email {
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
@@ -109,6 +109,8 @@
             font-size: 1rem;
             transition: all 0.3s ease;
         }
+
+       
 
         select {
             appearance: none;
@@ -122,7 +124,7 @@
 
         input[type="text"]:focus,
         textarea:focus,
-        select:focus {
+        select:focus,.email:focus {
             outline: none;
             border-color: #ffd700;
             box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
