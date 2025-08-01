@@ -1,0 +1,204 @@
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html, body {
+        width: 100%;
+        height: 100%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: white;
+        background-image: url('../pictures/pexels-jillyjillystudio-30636357.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .header {
+        height: 80px;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 500px 1fr;
+        align-items: center;
+        padding: 0 40px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        font-size: 1.2rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+    }
+
+    .logo-container {
+        display: flex;
+        align-items: center;
+    }
+
+    .logo {
+        height: 60px;
+        width: auto;
+        object-fit: contain;
+        cursor: pointer;
+    }
+
+    .sections-container {
+        display: flex;
+        gap: 25px;
+        flex-wrap: wrap;
+    }
+
+    .sections-container a {
+        text-decoration: none;
+        color: white;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    .sections-container a:hover {
+        color: #90ee90;
+    }
+
+    .sections-container a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 0;
+        background-color: #90ee90;
+        transition: width 0.3s ease;
+    }
+
+    .sections-container a:hover::after {
+        width: 100%;
+    }
+
+    .account-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    .account-container:hover {
+        transform: translateY(-2px);
+    }
+
+    .profile {
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .profile:hover {
+        color: #90ee90;
+    }
+
+    .user-image {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid white;
+        cursor: pointer;
+        transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .user-image:hover {
+        transform: scale(1.1);
+        border-color: #90ee90;
+    }
+
+    .main-container {
+        padding: 100px 50px 60px 50px;
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+    }
+
+    .about1 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 50px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+        border: 1px solid rgba(144, 238, 144, 0.2);
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .about1::before {
+        content: '';
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        right: -2px;
+        bottom: -2px;
+        background: linear-gradient(45deg, 
+            rgba(144, 238, 144, 0.1), 
+            rgba(144, 238, 144, 0.3), 
+            rgba(144, 238, 144, 0.1));
+        z-index: -1;
+        border-radius: 22px;
+        animation: gradientBorder 6s ease infinite;
+        background-size: 200% 200%;
+    }
+
+    @keyframes gradientBorder {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .about1 p {
+        font-size: 1.4rem;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        position: relative;
+        padding: 20px;
+    }
+
+    .about1 p::before,
+    .about1 p::after {
+        content: '"';
+        font-size: 3rem;
+        color: rgba(144, 238, 144, 0.5);
+        position: absolute;
+    }
+
+    .about1 p::before {
+        top: -10px;
+        left: -10px;
+    }
+
+    .about1 p::after {
+        bottom: -30px;
+        right: -10px;
+    }
+
+    .leaf-icon {
+        color: #90ee90;
+        font-size: 2rem;
+        margin-bottom: 20px;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+
+    .signature {
+        font-family: 'Brush Script MT', cursive;
+        font-size: 1.8rem;
+        color: #90ee90;
+        margin-top: 20px;
+    }

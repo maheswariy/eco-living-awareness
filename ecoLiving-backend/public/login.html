@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sign In</title>
+  <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-side"></div>
+    <div class="right-side">
+      <!-- ✅ FORM STARTS HERE -->
+      <form class="login-container" action="/login" method="POST">
+        <div>
+          <p class="heading">Log in</p>
+          <p class="quote-area">Earth Loves You, Love it Back</p>
+        </div>
+
+        <div class="input-email">
+          <input type="email" name="email" placeholder="Email" class="email js-email" required>
+        </div>
+
+        <div class="input-password">
+          <input type="password" name="password" placeholder="Password" class="password js-password" required>
+        </div>
+
+        <div class="login-button-div">
+          <input type="submit" class="login-button" value="Login">
+        </div>
+
+        <div class="signup-direct">
+          <a href="signup.html">Don't have an account? Sign up</a>
+        </div>
+
+        <div class="icons-container">
+          <img src="pictures/Pinterest-logo.png" alt="" class="icon">
+          <img src="pictures/x.png" alt="" class="icon">
+          <img src="pictures/Instagram_icon.png" alt="" class="icon">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

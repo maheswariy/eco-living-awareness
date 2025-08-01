@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Tales - Share Your Story</title>
+    <link rel="stylesheet" href="styles/myEcoLife.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="pictures/45201405_9146673.png" alt="" class="logo">
+        </div>
+        <div class="sections-container">
+            <p><a href="home.html">Home</a></p>
+            <p><a href="aboutus.html">AboutUs</a></p>
+            <p><a href="ecoWays.html">Eco Tales</a></p>
+            <p><a href="myEcoLife.html">My Eco Life</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+    </header>
+   
+    <form action="/submit-blog" method="POST">
+        <h2>Share Your Eco Tale</h2>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Your email" required />
+        <!-- Category Selection -->
+        <label for="category">Select Your Eco Category:</label>
+        <select id="category" name="category" required>
+            <option value="" disabled selected>Choose your eco category</option>
+            <option value="Plastic-Free Living">Plastic-Free Living</option>
+            <option value="Solar-Powered Living">Solar-Powered Living</option>
+            <option value="Minimalist Living  Zero Waste">Minimalist Living / Zero Waste</option>
+            <option value="Sustainable Gardening  Farming">Sustainable Gardening / Farming</option>
+            <option value="Eco-Friendly Home Design">Eco-Friendly Home Design</option>
+            <option value="Green Transportation">Green Transportation</option>
+            <option value="Sustainable Food Choices">Sustainable Food Choices</option>
+            <option value="Eco-Friendly Products & DIY">Eco-Friendly Products & DIY</option>
+            <option value="Slow Fashion">Slow Fashion</option>
+        </select>
+
+        <!-- Description or Story -->
+        <label for="content">Your Tale:</label>
+        <textarea id="content" name="content" placeholder="Write your eco-friendly experience..." required></textarea>
+
+      
+        <!-- Submit Button -->
+        <input type="submit" value="Submit Eco Tale">
+    </form>
+
+    <footer class="footer">
+        <p><a href="">Facebook</a></p>
+        <p><a href="">Instagram</a></p>
+        <p><a href="">You Tube</a></p>
+    </footer>
+</body>
+</html>

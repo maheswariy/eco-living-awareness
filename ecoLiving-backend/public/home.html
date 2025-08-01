@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles/home.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo-container">
+            <img src="pictures/45201405_9146673.png" alt="" class="logo">
+        </div>
+        <div class="sections-container">
+            <p><a href="home.html">Home</a></p>
+            <p><a href="aboutus.html">AboutUs</a></p>
+            <p><a href="ecoWays">Eco Tales</a></p>
+            <p><a href="myEcoLife.html">My Eco Life</a></p>
+            <p><a href="contact.html">Contact</a></p>
+        </div>
+    </header>
+    <main class="main-container">
+        <article class="left-side js-left-side"thing>
+            <h3 class="hot-topic-heading js-hot-topic-heading">Some </h3>
+            <p class="hot-topic-about js-hot-topic-about">Big News If youre filling a form that asks for ethnicity or race and you see Asian as an option, that is the correct choice for Indians, unless there is a more specific category like</p>
+        </article>
+        <article class="right-side js-right-side">
+            <img class="hot-topic-img js-hot-topic-img" src="pictures/leafs1.jpg"/>
+            <button class="scroll-button js-scroll-button">></button>
+        </article>
+    </main>
+    <footer class="footer">
+        <p><a href="">Facebook</a></p>
+        <p><a href="">Instagram</a></p>
+        <p><a href="">You Tube</a></p>
+    </footer>
+    <script>
+        let index = 0;
+        const display = [
+            {
+                heading:'Rusty railway carriage transformed into eco-living space',
+                about:'A rusty old railway carriage has been transformed into a cosy eco-friendly living space.The project is the work of Newport-based architect Spence Gadsby, 32, who launched handcrafted hut business Tŷ Green in early 2023 after securing a £20,000 Start Up Loan from the British Business Bank. Mr Gadsby turned the carriage into a warm, energy-efficient living space using natural, breathable materials.',
+                source:'pictures/Topics/Rusty railway carriage.jpg'
+            },
+            {
+                heading:'GoodEarth Malhar: Pioneering Sustainable Living in Bangalore’s Eco-Village',
+                about:'GoodEarth Malhar, a 55-acre eco-village in Kengeri, Bangalore, where sustainability meets modern living. Explore how this innovative community, is transforming urban living with eco-friendly practices and a focus on social cohesion.',
+                source:'pictures/Topics/Sustainable Living in Bangalore’s Eco-Village.png'
+            },
+            {
+                heading:'Modi launches initiatives to shape cleaner, greener future for Delhi',
+                about:'Prime Minister Narendra Modi flagged off electric buses in the national capital and planted a sapling at Bhagwan Mahavir Vanasthali Park on Thursday as part of a broader mission to build a “clean and green Delhi” and rejuvenate the Aravali mountain range. Mr. Modi was accompanied by Delhi Chief Minister Rekha Gupta and Lieutenant-Governor (L-G) V.K. Saxena, both of whom reiterated their commitment to sustainable urban development and environmental conservation on World Environment Day',
+                source:'pictures/Topics/Modi launches initiatives to shape cleaner, greener future for Delhi.avif'
+            }
+        ];
+
+        function displayHotTopics(){
+            let headingElement = document.body.querySelector('.js-hot-topic-heading');
+            let aboutElement = document.body.querySelector('.js-hot-topic-about');
+            let imgElement = document.body.querySelector('.js-hot-topic-img');
+            headingElement.innerHTML = display[index].heading;
+            aboutElement.innerHTML = display[index].about;
+            imgElement.src = display[index].source;
+        }
+
+        displayHotTopics();
+
+        document.body.querySelector('.js-scroll-button')
+        .addEventListener('click',()=>{
+            index = (index+1)%display.length;
+            console.log(index);
+            displayHotTopics();
+            
+        })
+    </script>
+</body>
+</html>

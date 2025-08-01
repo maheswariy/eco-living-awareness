@@ -1,0 +1,129 @@
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+    }
+
+    .left-side {
+      flex: 1;
+      background-image: url('../pictures/leafs4.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    .right-side {
+      flex: 1;
+      background-color: rgba(0, 0, 0, 0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      gap: 25px;
+      color: white;
+    }
+
+    .heading {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .quote-area {
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 20px;
+    }
+
+    .email,
+    .password {
+      width: 100%;
+      padding: 12px 10px;
+      font-size: 1.1rem;
+      border: none;
+      border-bottom: 2px solid white;
+      background: transparent;
+      color: white;
+      margin-bottom: 20px;
+      transition: border-color 0.3s;
+    }
+
+    .email:focus,
+    .password:focus {
+      outline: none;
+      border-bottom: 2px solid #90ee90;
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 12px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: black;
+      background-color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .login-button:hover {
+      background-color: #e0e0e0;
+    }
+
+    .signup-direct {
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.7);
+      text-align: left;
+    }
+
+    .signup-direct a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .signup-direct a:hover {
+      text-decoration: underline;
+      color: #90ee90;
+    }
+
+    .icons-container {
+      display: flex;
+      justify-content: flex-start;
+      gap: 25px;
+      margin-top: 30px;
+    }
+
+    .icon {
+      width: 28px;
+      height: 28px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .icon:hover {
+      transform: scale(1.2);
+    }

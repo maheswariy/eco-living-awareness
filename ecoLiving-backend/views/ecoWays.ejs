@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eco Stories</title>
+  <style>
+    * {
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+    }
+
+    body {
+      background-color: #f0f4f2;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* ✅ MODERN STYLISH HEADER */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 80px;
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      align-items: center;
+      padding: 0 40px;
+      font-size: 1.1rem; /* 🔽 Reduced font size */
+      z-index: 1000;
+
+      background: rgba(0, 64, 50, 0.6); /* Deep green with transparency */
+      backdrop-filter: blur(10px); /* ⛱️ Softens background */
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      cursor: pointer;
+    }
+
+    .sections-container {
+      display: flex;
+      align-items: center; /* ✅ Center vertically */
+      gap: 25px;
+    }
+
+    .sections-container p {
+      margin: 0;
+    }
+
+    .sections-container a {
+      text-decoration: none;
+      color: #ffffff;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .sections-container a:hover {
+      color: #90ee90;
+    }
+
+    .about-blog {
+      background-color: #002c2b;
+      border-bottom-left-radius: 34px;
+      border-bottom-right-radius: 34px;
+      color: white;
+      padding: 120px 20px 40px; /* ⬆ padding to make space for fixed header */
+      text-align: center;
+    }
+
+    .about-blog h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .about-blog h2 span {
+      color: orange;
+    }
+
+    .about-blog p {
+      font-size: 1.2rem;
+      max-width: 900px;
+      margin: auto;
+      line-height: 1.6;
+      color: #e3e3e3;
+    }
+
+    .container {
+      margin: 60px auto;
+      padding: 0 20px;
+      max-width: 1200px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+    }
+
+    .blog {
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .blog:hover {
+      transform: translateY(-8px);
+    }
+
+    .blog img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .blog-content {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      cursor: pointer;
+    }
+
+    .blog-content h3 {
+      font-size: 1.4rem;
+      color: #222;
+    }
+
+    .blog-content p {
+      font-size: 0.95rem;
+      color: #444;
+      line-height: 1.5;
+    }
+
+    .read-more {
+      margin-top: auto;
+      font-size: 0.95rem;
+      font-weight: bold;
+      color: #007f66;
+      text-decoration: none;
+    }
+
+    .read-more:hover {
+      color: #004c3f;
+      text-decoration: underline;
+    }
+
+    /* 🌿 Responsive for mobile */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        height: auto;
+        padding: 10px 20px;
+      }
+
+      .sections-container {
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+      }
+
+      .logo-container {
+        width: 100%;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Updated header with centered links and clean font -->
+  <header class="header">
+    <div class="logo-container">
+      <img src="pictures/45201405_9146673.png" alt="logo" class="logo" />
+    </div>
+    <div class="sections-container">
+      <p><a href="home.html">Home</a></p>
+      <p><a href="aboutus.html">AboutUs</a></p>
+      <p><a href="ecoWays">Eco Tales</a></p>
+      <p><a href="myEcoLife.html">My Eco Life</a></p>
+      <p><a href="contact.html">Contact</a></p>
+    </div>
+  </header>
+
+  <section class="about-blog">
+    <h2>Our Community's Eco Stories<span>.</span></h2>
+    <p>
+      Welcome to our Eco Living Community—a space where sustainability isn’t just a trend, but a way of life.
+      Here, each member shares their personal path towards a greener future through stories, tips, and vibrant
+      imagery. Explore how people are harmonizing modern living with nature.
+    </p>
+  </section>
+
+  <main class="container">
+    <% blogs.forEach(blog => { %>
+      <div class="blog">
+        <img src="/pictures/ecoWaysImages/<%= blog.category %>.jpg" alt="Eco Image" />
+        <div class="blog-content" onclick="showFullBlog('<%= blog._id %>')">
+          <h3><%= blog.category %></h3>
+          <p>
+            <% 
+              let words = blog.content.split(" ");
+              let shortContent = words.slice(0, 15).join(" ");
+            %>
+            <%= shortContent %>...
+          </p>
+          <a href="#" class="read-more">By <%= blog.email %></a>
+        </div>
+      </div>
+    <% }) %>
+  </main>
+
+  <script>
+    function showFullBlog(blogId) {
+      window.location.href = `/blog/${blogId}`;
+    }
+  </script>
+</body>
+</html>
