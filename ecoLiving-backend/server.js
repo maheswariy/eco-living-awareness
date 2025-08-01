@@ -11,7 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // MongoDB connection
-mongoose.connect('mongodb+srv://lakshmimaheswariyedumbakula:1234@cluster0.cqe1ssz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
+
+
+require('dotenv').config();
+
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
